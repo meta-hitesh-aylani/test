@@ -1,0 +1,88 @@
+
+New Request/Project: 
+Requester, Manager, Admin roles only
+
+Edit Request/Project: 
+Stakeholder with Edit permission (with Manager or Admin role), Request Owner (with Manager or Admin role)
+
+Edit Draft Request/Project:
+User only who added that Request
+
+Request Submit:
+User who adding request will be added as Stakeholder automatically but Permission will derive based on Role (Edit for Manager and Admin, View for Requester). This Stakeholder can not be edited and deleted.
+
+Request/Project Owner Assign: 
+Request Owner will be added as Stakeholder automatically and Permission will be Edit. This Stakeholder can not be deleted directly. When change the Owner, then previous owner will be removed from Stakeholder list automatically.
+
+Projects: 
+List Project if current user exist in Project's Stakeholder list.
+
+Tasks:
+List tasks assigned to current user or if current user exist in Project's Stakeholder list.
+
+Project Detail:
+Edit mode: Current user must be in Stakeholder list with Edit permission (with Manager or Admin role).
+Readonly mode: Current user must be in Stakeholder list with View permission.
+
+Dashboard:
+Charts: Available for Admin and Manager only
+Projects: Available for all
+Tasks: Available for all
+Updates: Available for all, howerver items will be user specific only
+
+Divesity Dashboard:
+Available for Admin and Manager only
+
+Admin Settings:
+Available for Admin only
+
+Teams:
+Available for Admin and Manager but new team option available for Admin only ad Manager can see/edit teams when his is Team Admin.
+
+Projects, Tasks and Charts visibility on Dashboard:
+
+Dropdown as filter on top for Sourcing Admin only which will show options as follows:
+> My Projects
+> Team wise Projects (Show all teams where Current user added as member)
+
+Functionality will be as follows:
+My Projects:
+> Charts : Request Owner based only
+> Projects: Stakeholder based
+> Task: Stakeholder based
+
+Team wise Projects :
+> Charts : Team based (Filter projects on TeamId whatever selected in team dropdown)
+> Projects: Team based
+> Task: Team based
+
+No filter required for Sourcing Manager but logic will work as follows:
+> Charts : Request Owner based only
+> Projects: Stakeholder based
+> Task: Stakeholder based
+
+Logic of filter options to show for Sourcing Admin on Dashboards:
+Suppose two Sourcing Admins are available in system:
+	- Admin 1
+	- Admin 2
+
+Suppose five teams are available in system and Admins are assigned in specific teams as follows:
+	- Team A : Admin 1
+	- Team B : Admin 2
+	- Team C : Admin 1, Admin 2
+	- Team D : Admin 2
+	- Team E : Admin 1
+
+Options will be shown for Admin 1:
+	- My Projects
+	- Team Projects (Option group name)
+		> Team A, 
+		> Team C, 
+		> Team E
+
+Options will be shown for Admin 2:
+	- My Projects
+	- Team Projects (Option group name)
+		> Team B, 
+		> Team C, 
+		> Team D
