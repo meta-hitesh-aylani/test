@@ -1,0 +1,22 @@
+(function ($) {
+    "use strict";
+
+    function SourcingRequestIntake() {	// Replace function name like ContrllerAction method name
+        var $this = this;
+
+        function initialize() {
+		// put document ready code here but not document ready statement
+        }
+
+	// Put other individual functions here
+	
+        $this.init = function () {
+            initialize();
+        };
+    }
+
+    $(function () {
+        var self = new SourcingRequestIntake(); // Replace function name like ContrllerAction method same as above
+        self.init();
+    });
+})(jQuery);
